@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+long long ridicare_la_putere(int baza, int putere,int nr_cifre) ///functia calculeaza puterea unui numar, salvand doar cifrele de care avem nevoie
+{
+    long long numar=1,putere_10=1; ///numar este egal cu baza la putere, putere_10 se formeaza pentru a putea salva doar ultimele cifre specificate de nr_cifre
+    for(int i=1;i<=nr_cifre;i++)
+        putere_10=putere_10*10;
+    for(int i=1;i<=putere;i++)
+        numar=(numar*baza)%putere_10;
+    return numar;
+}
+int main()
+{
+    long long nr_prim=ridicare_la_putere(2,7830457,10); ///calculeaza ultimele 10 cifre ale ridicarii lui 2 la puterea 7830457
+    nr_prim=(nr_prim*28433+1)%10000000000; ///ultimele 10 cifre ale numarului prim dat, folosind 10^10
+    cout<<"Ultimele 10 cifre ale numarului sunt "<<nr_prim;
+    return 0;
+}
