@@ -1,0 +1,52 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+bool verificare_prim(int numar)
+{
+    int radical_din_numar = sqrt(numar);
+
+    for(int divizor = 3; divizor <= radical_din_numar; divizor += 2)
+        if(numar % divizor == 0)
+            return false;
+
+    return true;
+}
+
+void afisare_mesaj(n, suma) {
+    cout << "Suma primelor " << n << " numere prime este egala cu " << suma;
+}
+
+int main()
+{
+    int n, suma = 0, numar = 3;
+    
+    cin>>n;
+    
+    if(n == 0) {
+        afisare_mesaj(n, suma);
+        return 0;
+    }
+
+    if(n == 1) {
+        suma = 2;
+        afisare_mesaj(n, suma);
+        return 0;
+    }
+    
+    while(n > 0)
+    {
+        if(verificare_prim(numar))
+        {
+                suma += numar;
+                n--;
+        }
+
+        numar += 2;
+    }
+
+    afisare_mesaj(n, suma);
+    
+    return 0;
+}
