@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ifstream fin("fisier.in");
+
+void citire(int v[], int n)
+{
+    for(int i=1;i<=n;i++)
+        fin>>v[i];
+}
+
+int main()
+{
+    int i,produs=1,produs_maxim,v[1001],n;
+    citire(v,1000);
+    cin>>n;
+    for(i=1;i<=n;i++)
+        produs=produs*v[i];
+    produs_maxim=produs;
+    for(i=n+1;i<=1000;i++)
+        {
+            produs=(produs/v[i-n])*v[i];
+            if(produs>produs_maxim)
+                produs_maxim=produs;
+        }
+
+    cout<<produs_maxim;
+    return 0;
+}
