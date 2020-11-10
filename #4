@@ -1,0 +1,25 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{      
+        ///Usile sunt vizitate de fiecare data cand nr vizitei divide nr usii
+        ///Cum usile sunt initial inchise, pentru a ramane deschise usile trebuie sa fie vizitate de un nr impar de dati
+        ///Adica nr usii trebuie sa aiba un nr impar de divizori => nr usii este patrat perfect
+        ///De aici, problema se reduce la a afisa patratele perfecte intre 1 si 100, restul usilor fiind inchise
+
+        cout<<"Pozitiile usilor deschise sunt: ";
+        for(int i=1;i<=10;i++)
+            cout<<i*i<<" ";
+
+        ///caz general
+        /*
+        int n;
+        cin>>n;
+        for(i=1;i<=sqrt(n);i++)
+            cout<<i*i<<" ";
+        */
+    return 0;
+}
