@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+int suma_diagonala_principala(int n)
+{
+    int nr=(n*n+1)*(n/2)+(n*n+1)/2; ///elementul din centrul matricei va fi mereu egal cu (n^2+1)/2, iar restul elementelor insumate cu simetricul lor vor fi mereu egale cu (n^2+1)
+                                    ///se inmulteste cu n/2 pentru ca acela este nr de perechi simetrice de pe diagonala principala
+    return nr;
+}
+int main()
+{   
+    int n;
+    cin>>n;
+    cout << suma_diagonala_principala(n);
+    return 0;
+}
